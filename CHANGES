@@ -1,3 +1,7 @@
+Version 0.6.6 released 21 Aug 2025
+
+* Add command line arguments to `git whatchanged` that allows it to keep working with `git` `2.51.0`.
+
 Version 0.6.5 released 28 Aug 2020
 
 * Removed data files in extra.

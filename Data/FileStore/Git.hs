@@ -196,7 +196,7 @@ gitLatestRevId repo name = do
 -- | Get revision information for a particular revision ID, or latest revision.
 gitGetRevision :: FilePath -> RevisionId -> IO Revision
 gitGetRevision repo revid = do
-  (status, _, output) <- runGitCommand repo "whatchanged" ["-z","--pretty=format:" ++ gitLogFormat, "--max-count=1", revid]
+  (status, _, output) <- runGitCommand repo "whatchanged" ["-z", "--i-still-use-this", "--pretty=format:" ++ gitLogFormat, "--max-count=1", revid]
   if status == ExitSuccess
      then parseLogEntry $ B.drop 1 output -- drop initial \1
      else throwIO NotFound
