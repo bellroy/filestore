@@ -277,7 +277,7 @@ gitLogFormat = "%x01%H%x00%ct%x00%an%x00%ae%x00%B%n%x00"
 gitLog :: FilePath -> [FilePath] -> TimeRange -> Maybe Int -> IO [Revision]
 gitLog repo names (TimeRange mbSince mbUntil) mblimit = do
   (status, err, output) <- runGitCommand repo "whatchanged" $
-                           ["-z","--pretty=format:" ++ gitLogFormat] ++
+                           ["-z", "--i-still-use-this", "--pretty=format:" ++ gitLogFormat] ++
                            (case mbSince of
                                  Just since   -> ["--since='" ++ show since ++ "'"]
                                  Nothing      -> []) ++
